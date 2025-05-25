@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anne Costa - Motorista Particular</title>
+  <style>
+    :root {
+      --vinho: #3a192a;
+      --preto: #111111;
+      --cinza-escuro: #474747;
+      --branco: #ffffff;
+      --amarelo: #ffe082;
+      --bordo: #6a233a;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--preto) 60%, var(--vinho) 100%);
+      color: var(--branco);
+    }
+    .container {
+      max-width: 420px;
+      margin: 36px auto;
+      background: rgba(71,71,71,0.94);
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+      padding: 32px 20px 20px 20px;
+      position: relative;
+    }
+    .titulo {
+      color: var(--bordo);
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    .subtitulo {
+      color: var(--branco);
+      font-size: 1.1em;
+      font-weight: 600;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--branco);
+      display: inline-block;
+      padding-bottom: 2px;
+    }
+    .telefone {
+      color: var(--amarelo);
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .telefone span {
+      color: var(--branco);
+      font-weight: 400;
+      margin-left: 6px;
+      font-size: 1em;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      color: var(--branco);
+      font-weight: 500;
+      font-size: 1em;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid var(--cinza-escuro);
+      border-radius: 6px;
+      font-size: 1em;
+      background: var(--preto);
+      color: var(--branco);
+      box-sizing: border-box;
+    }
+    .whatsapp-btn {
+      display: block;
+      width: 100%;
+      margin: 22px 0 14px 0;
+      background: var(--bordo);
+      color: var(--branco);
+      border: none;
+      padding: 13px;
+      border-radius: 6px;
+      font-size: 1.1em;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .whatsapp-btn:hover {
+      background: var(--vinho);
+    }
+    .servicos {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+      color: var(--branco);
+      font-size: 1em;
+      line-height: 1.7;
+    }
+    .destaque {
+      display: inline-block;
+      background: var(--amarelo);
+      color: var(--preto);
+      font-weight: bold;
+      padding: 3px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      font-size: 1.02em;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px 4px 14px 4px;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .titulo {
+        font-size: 1.3em;
+      }
+      .whatsapp-btn {
+        font-size: 1em;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="titulo">ANNE COSTA</div>
+    <div class="subtitulo">MOTORISTA PARTICULAR</div>
+    <div class="telefone">
+      <span>📞</span> (85) 98547-9321
+    </div>
+    <form id="agendarForm" onsubmit="enviarWhatsApp(); return false;">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" required>
+
+      <label for="data">Data</label>
+      <input type="date" id="data" required>
+
+      <label for="hora">Horário</label>
+      <input type="time" id="hora" required>
+
+      <label for="destino">Destino</label>
+      <input type="text" id="destino" required>
+
+      <button type="submit" class="whatsapp-btn">Agendar pelo WhatsApp</button>
+    </form>
+    <ul class="servicos">
+      <li>Entregas</li>
+      <li>Turismos/Shows</li>
+      <li>Aeroportos/Translados</li>
+      <li>Empresas/Viagens</li>
+      <li>Trajetos longos e curtos</li>
+    </ul>
+    <div class="destaque">SERVIÇO 24 HORAS</div>
+  </div>
+  <script>
+    function enviarWhatsApp() {
+      const nome = document.getElementById('nome').value;
+      const data = document.getElementById('data').value;
+      const hora = document.getElementById('hora').value;
+      const destino = document.getElementById('destino').value;
+      const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar uma corrida para ${data} às ${hora}, com destino a ${destino}.`;
+      const numero = '5585985479321';
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
