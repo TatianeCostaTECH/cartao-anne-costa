@@ -11,7 +11,6 @@
       --cinza-escuro: #474747;
       --branco: #ffffff;
       --amarelo: #ffe082;
-      --bordo: #6a233a;
     }
     body {
       margin: 0;
@@ -22,20 +21,20 @@
       color: var(--branco);
     }
     .container {
-      max-width: 420px;
-      margin: 36px auto;
-      background: rgba(71,71,71,0.94);
+      max-width: 440px;
+      margin: 40px auto;
+      background: var(--cinza-escuro);
       border-radius: 14px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.25);
-      padding: 32px 20px 20px 20px;
+      padding: 32px 24px 24px 24px;
       position: relative;
     }
     .titulo {
-      color: var(--bordo);
+      color: var(--vinho);
       font-size: 2em;
       font-weight: bold;
       letter-spacing: 1px;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
     .subtitulo {
       color: var(--branco);
@@ -73,7 +72,7 @@
       width: 100%;
       padding: 8px;
       margin-top: 4px;
-      border: 1px solid var(--cinza-escuro);
+      border: 1px solid var(--vinho);
       border-radius: 6px;
       font-size: 1em;
       background: var(--preto);
@@ -84,7 +83,7 @@
       display: block;
       width: 100%;
       margin: 22px 0 14px 0;
-      background: var(--bordo);
+      background: var(--vinho);
       color: var(--branco);
       border: none;
       padding: 13px;
@@ -97,7 +96,7 @@
       cursor: pointer;
     }
     .whatsapp-btn:hover {
-      background: var(--vinho);
+      background: var(--preto);
     }
     .servicos {
       margin-top: 20px;
@@ -120,7 +119,7 @@
     }
     @media (max-width: 600px) {
       .container {
-        padding: 20px 4px 14px 4px;
+        padding: 18px 4px 14px 4px;
         max-width: 100%;
         border-radius: 0;
         box-shadow: none;
