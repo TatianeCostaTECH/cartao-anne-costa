@@ -6,7 +6,7 @@ Cartão digital responsivo para divulgação dos serviços de motorista particul
 
 ## 💻 Visualização
 
-Acesse: [https://tatiaecostatech.github.io/cartao-anne-costa/](https://seuusuario.github.io/cartao-anne-costa/)
+Acesse: [https://tatianecostatech.github.io/cartao-anne-costa/](https://seuusuario.github.io/cartao-anne-costa/)
 
 ## 🎨 Paleta de Cores
 
