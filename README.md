@@ -1,22 +1,18 @@
-# cartao-anne-costa
-PAGINA PARA ACESSO DE FORMULARIO AGENDAMENTO
 # Cartão Digital – Anne Costa
 
 Cartão digital responsivo para divulgação dos serviços de motorista particular de Anne Costa.
 
 ## 💻 Visualização
 
-Acesse: [https://tatianecostatech.github.io/cartao-anne-costa/](https://seuusuario.github.io/cartao-anne-costa/)
+Acesse: [https://tatianecostatech.github.io/cartao-anne-costa/](https://tatianecostatech.github.io/cartao-anne-costa/)
 
 ## 🎨 Paleta de Cores
 
-- **Vinho escuro / Bordô:** #3a192a
+- **Vinho escuro:** #3a192a
 - **Preto:** #111111
 - **Cinza escuro:** #474747
 - **Branco:** #ffffff
-- **Amarelo claro:** #f7e49a
-- **Roxo escuro (nome):** #6a233a
-- **Cinza claro:** #cccccc
+- **Amarelo claro:** #ffe082
 
 ## 🚗 Funcionalidades
 
