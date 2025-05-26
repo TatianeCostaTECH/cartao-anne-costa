@@ -6,362 +6,223 @@
   <title>Anne Costa - Motorista Particular</title>
   <style>
     :root {
-      --roxo-escuro: #4a1942;
-      --roxo-medio: #6d2c44;
+      --vinho: #9b3a5a;
+      --vinho-escuro: #6d2c44;
       --preto: #1a1a1a;
-      --cinza-escuro: #2d2d2d;
-      --branco: #ffffff;
+      --cinza-escuro: #444;
+      --cinza-form: #222;
+      --branco: #fff;
       --amarelo: #ffd700;
-      --gradiente: linear-gradient(135deg, #4a1942 0%, #6d2c44 50%, #1a1a1a 100%);
+      --botao: #4a1c2a;
     }
-
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--gradiente);
       min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--preto) 60%, var(--vinho-escuro) 100%);
+      color: var(--branco);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: var(--cinza-escuro);
+      border-radius: 22px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      max-width: 420px;
+      width: 100%;
+      margin: 36px 8px;
+      padding: 38px 28px 28px 28px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .titulo {
+      color: var(--vinho);
+      font-size: 2.1em;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 0 12px #ffd70055;
+    }
+    .subtitulo {
+      color: var(--branco);
+      font-size: 1.13em;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-align: center;
+      letter-spacing: 1.5px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    .telefone {
+      color: var(--amarelo);
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 18px;
+      text-align: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
-      color: var(--branco);
+      gap: 6px;
+      text-shadow: 0 1px 2px #0008;
     }
-
-    .container {
-      background: rgba(45, 45, 45, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-      max-width: 450px;
+    form {
       width: 100%;
-      overflow: hidden;
-      position: relative;
+      margin-bottom: 18px;
     }
-
-    .header {
-      background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo-medio));
-      padding: 40px 30px 30px;
-      text-align: center;
-      position: relative;
-    }
-
-    .header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--amarelo);
-    }
-
-    .titulo {
-      font-size: 2.2em;
-      font-weight: 700;
-      color: var(--branco);
-      margin-bottom: 8px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      letter-spacing: 2px;
-    }
-
-    .subtitulo {
-      font-size: 1.1em;
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 400;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-    }
-
-    .telefone {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 12px 20px;
-      border-radius: 25px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 1.1em;
-      font-weight: 600;
-      color: var(--amarelo);
-      border: 1px solid rgba(255, 215, 0, 0.3);
-    }
-
-    .form-container {
-      padding: 30px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
     label {
       display: block;
-      font-size: 0.95em;
-      font-weight: 600;
+      margin-top: 12px;
       color: var(--branco);
-      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 1em;
       letter-spacing: 0.5px;
     }
-
     input, select {
       width: 100%;
-      padding: 14px 16px;
-      border: 2px solid rgba(109, 44, 68, 0.3);
-      border-radius: 10px;
-      background: rgba(26, 26, 26, 0.8);
-      color: var(--branco);
+      padding: 11px 12px;
+      margin-top: 6px;
+      border: 1.7px solid var(--vinho-escuro);
+      border-radius: 7px;
       font-size: 1em;
-      transition: all 0.3s ease;
-    }
-
-    input:focus, select:focus {
+      background: var(--cinza-form);
+      color: var(--branco);
+      box-sizing: border-box;
       outline: none;
-      border-color: var(--roxo-medio);
-      box-shadow: 0 0 15px rgba(109, 44, 68, 0.3);
-      transform: translateY(-2px);
+      transition: border 0.2s, box-shadow 0.2s;
     }
-
-    .btn-whatsapp {
+    input:focus, select:focus {
+      border: 2px solid var(--amarelo);
+      box-shadow: 0 0 8px #ffd70055;
+    }
+    .whatsapp-btn {
+      display: block;
       width: 100%;
-      padding: 16px;
-      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-      border: none;
-      border-radius: 12px;
+      margin: 22px 0 14px 0;
+      background: var(--botao);
       color: var(--branco);
-      font-size: 1.1em;
-      font-weight: 700;
-      cursor: pointer;
-      margin: 25px 0 20px;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-    }
-
-    .btn-whatsapp:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
-    }
-
-    .btn-whatsapp:active {
-      transform: translateY(-1px);
-    }
-
-    .servicos {
-      background: rgba(26, 26, 26, 0.5);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .servicos-titulo {
-      font-size: 1.1em;
-      font-weight: 600;
-      color: var(--amarelo);
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    .servicos-lista {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-
-    .servicos-lista li {
-      font-size: 0.9em;
-      color: rgba(255, 255, 255, 0.8);
-      padding: 8px 0;
-      border-left: 3px solid var(--roxo-medio);
-      padding-left: 12px;
-    }
-
-    .destaque {
-      text-align: center;
-      background: linear-gradient(90deg, var(--amarelo), #ffed4e);
-      color: var(--preto);
-      padding: 12px;
+      border: none;
+      padding: 15px;
       border-radius: 8px;
-      font-weight: 700;
-      font-size: 1em;
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px #0004;
       letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
     }
-
-    .decoracao {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      background: rgba(255, 215, 0, 0.1);
-      border-radius: 50%;
-      border: 2px solid rgba(255, 215, 0, 0.2);
+    .whatsapp-btn:hover {
+      background: var(--vinho);
+      box-shadow: 0 4px 18px #ffd70033;
     }
-
-    .decoracao::before {
-      content: '🚗';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 24px;
+    .servicos {
+      margin-top: 18px;
+      padding: 0;
+      list-style: none;
+      color: var(--branco);
+      font-size: 1em;
+      line-height: 1.7;
+      text-align: center;
     }
-
+    .servicos li {
+      margin: 3px 0;
+      font-size: 1.02em;
+      letter-spacing: 0.5px;
+    }
+    .destaque {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--amarelo) 70%, #fffbe0 100%);
+      color: var(--preto);
+      font-weight: bold;
+      padding: 6px 18px;
+      border-radius: 6px;
+      margin-top: 15px;
+      font-size: 1.05em;
+      letter-spacing: 1.2px;
+      box-shadow: 0 2px 10px #ffd70033;
+      text-align: center;
+    }
     @media (max-width: 600px) {
       .container {
-        margin: 10px;
-        border-radius: 15px;
+        max-width: 99vw;
+        margin: 10px 2vw;
+        padding: 18px 4vw 12px 4vw;
+        border-radius: 14px;
       }
-      
-      .header {
-        padding: 30px 20px 25px;
-      }
-      
       .titulo {
-        font-size: 1.8em;
+        font-size: 1.3em;
       }
-      
-      .form-container {
-        padding: 20px;
+      .whatsapp-btn {
+        font-size: 1em;
+        padding: 11px;
       }
-      
-      .servicos-lista {
-        grid-template-columns: 1fr;
-      }
-      
-      .decoracao {
-        display: none;
+      .destaque {
+        font-size: 0.97em;
       }
     }
-
-    /* Animações */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .container {
-      animation: fadeInUp 0.8s ease-out;
-    }
-
-    .form-group {
-      animation: fadeInUp 0.8s ease-out;
-      animation-delay: 0.1s;
-      animation-fill-mode: both;
-    }
-
-    .form-group:nth-child(2) { animation-delay: 0.2s; }
-    .form-group:nth-child(3) { animation-delay: 0.3s; }
-    .form-group:nth-child(4) { animation-delay: 0.4s; }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="decoracao"></div>
-    
-    <div class="header">
-      <h1 class="titulo">ANNE COSTA</h1>
-      <h2 class="subtitulo">MOTORISTA PARTICULAR</h2>
-      <div class="telefone">
-        <span>📞</span>
-        (85) 98547-9321
-      </div>
+    <div class="titulo">ANNE COSTA</div>
+    <div class="subtitulo">MOTORISTA PARTICULAR</div>
+    <div class="telefone">
+      <span>📞</span> <span>(85) 98547-9321</span>
     </div>
+    <form id="agendarForm" onsubmit="enviarWhatsApp(); return false;">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" required>
 
-    <div class="form-container">
-      <form id="agendarForm" onsubmit="enviarWhatsApp(); return false;">
-        <div class="form-group">
-          <label for="nome">👤 Nome Completo</label>
-          <input type="text" id="nome" placeholder="Digite seu nome" required>
-        </div>
+      <label for="data">Data</label>
+      <input type="date" id="data" required>
 
-        <div class="form-group">
-          <label for="data">📅 Data da Corrida</label>
-          <input type="date" id="data" required>
-        </div>
+      <label for="hora">Horário</label>
+      <input type="time" id="hora" required>
 
-        <div class="form-group">
-          <label for="hora">🕐 Horário</label>
-          <input type="time" id="hora" required>
-        </div>
+      <label for="localInicio">Local de início</label>
+      <input type="text" id="localInicio" required>
 
-        <div class="form-group">
-          <label for="destino">📍 Destino</label>
-          <input type="text" id="destino" placeholder="Para onde vamos?" required>
-        </div>
+      <label for="localFinal">Local final</label>
+      <input type="text" id="localFinal" required>
 
-        <button type="submit" class="btn-whatsapp">
-          📱 Agendar pelo WhatsApp
-        </button>
-      </form>
-
-      <div class="servicos">
-        <div class="servicos-titulo">🚗 Nossos Serviços</div>
-        <ul class="servicos-lista">
-          <li>✈️ Aeroportos</li>
-          <li>📦 Entregas</li>
-          <li>🎭 Shows/Eventos</li>
-          <li>🏢 Empresas</li>
-          <li>🌆 Turismo</li>
-          <li>🛣️ Viagens</li>
-        </ul>
-      </div>
-
-      <div class="destaque">
-        ⚡ SERVIÇO 24 HORAS ⚡
-      </div>
-    </div>
+      <button type="submit" class="whatsapp-btn">Agendar pelo WhatsApp</button>
+    </form>
+    <ul class="servicos">
+      <li>Entregas</li>
+      <li>Turismos/Shows</li>
+      <li>Aeroportos/Translados</li>
+      <li>Empresas/Viagens</li>
+      <li>Trajetos longos e curtos</li>
+    </ul>
+    <div class="destaque">SERVIÇO 24 HORAS</div>
   </div>
-
   <script>
-    // Define data mínima como hoje
+    // Define a data mínima como hoje
     document.getElementById('data').min = new Date().toISOString().split('T')[0];
 
     function enviarWhatsApp() {
       const nome = document.getElementById('nome').value;
       const data = document.getElementById('data').value;
       const hora = document.getElementById('hora').value;
-      const destino = document.getElementById('destino').value;
+      const localInicio = document.getElementById('localInicio').value;
+      const localFinal = document.getElementById('localFinal').value;
 
-      // Formata a data para formato brasileiro
+      // Formata data para pt-BR
       const dataFormatada = new Date(data + 'T00:00:00').toLocaleDateString('pt-BR');
 
-      const mensagem = `🚗 *AGENDAMENTO DE CORRIDA*
-
-👤 *Nome:* ${nome}
-📅 *Data:* ${dataFormatada}
-🕐 *Horário:* ${hora}
-📍 *Destino:* ${destino}
-
-Olá Anne! Gostaria de agendar uma corrida conforme os dados acima. Aguardo confirmação! 😊`;
+      const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar uma corrida para ${dataFormatada} às ${hora}.
+Local de início: ${localInicio}
+Local final: ${localFinal}`;
 
       const numero = '5585985479321';
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
       window.open(url, '_blank');
     }
-
-    // Animação suave nos inputs
-    document.querySelectorAll('input, select').forEach(input => {
-      input.addEventListener('focus', function() {
-        this.parentElement.style.transform = 'scale(1.02)';
-      });
-      
-      input.addEventListener('blur', function() {
-        this.parentElement.style.transform = 'scale(1)';
-      });
-    });
   </script>
 </body>
 </html>
