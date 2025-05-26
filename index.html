@@ -6,22 +6,22 @@
   <title>Anne Costa - Motorista Particular</title>
   <style>
     :root {
-      --vinho: #b71c50;
-      --vinho-escuro: #6d2c44;
-      --preto: #18141a;
-      --cinza-escuro: #29242c;
-      --cinza-form: #222026;
-      --branco: #fff;
+      --vinho: #8d1844;
+      --vinho-escuro: #5a0d2c;
+      --vinho-gradiente: linear-gradient(135deg, #8d1844 0%, #5a0d2c 100%);
       --amarelo: #ffd700;
-      --botao: #b71c50;
-      --botao-hover: #d72660;
+      --cinza-escuro: #232126;
+      --branco: #fff;
+      --cinza-form: #18171b;
+      --botao: #8d1844;
+      --botao-hover: #c21f5b;
     }
     body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, var(--preto) 60%, var(--vinho-escuro) 100%);
+      background: radial-gradient(circle at 80% 80%, #8d184410 0%, #232126 100%), #18141a;
       color: var(--branco);
       display: flex;
       flex-direction: column;
@@ -30,9 +30,9 @@
     }
     .container {
       background: var(--cinza-escuro);
-      border-radius: 22px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.45);
-      max-width: 430px;
+      border-radius: 28px;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+      max-width: 410px;
       width: 100%;
       margin: 36px 8px;
       padding: 38px 28px 28px 28px;
@@ -40,16 +40,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      border: 4px solid var(--vinho);
+      position: relative;
     }
     .titulo {
-      color: var(--amarelo);
-      font-size: 2.2em;
+      color: var(--vinho);
+      font-size: 2.3em;
       font-weight: 900;
       letter-spacing: 2.5px;
-      margin-bottom: 5px;
+      margin-bottom: 2px;
       text-align: center;
-      text-shadow: 2px 2px 8px var(--vinho), 0 0 12px #000a;
-      background: linear-gradient(90deg, var(--amarelo) 60%, var(--vinho) 100%);
+      text-shadow: 0 2px 12px #000a, 0 0 6px var(--amarelo);
+      background: var(--vinho-gradiente);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -57,10 +59,10 @@
     .subtitulo {
       color: var(--branco);
       font-size: 1.18em;
-      font-weight: 700;
-      margin-bottom: 14px;
+      font-weight: 800;
+      margin-bottom: 10px;
       text-align: center;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       text-shadow: 0 1px 3px var(--vinho-escuro);
     }
     .telefone {
@@ -73,7 +75,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      text-shadow: 0 1px 2px #0008;
+      text-shadow: 0 1px 2px #0008, 0 0 6px #fff8;
     }
     form {
       width: 100%;
@@ -83,19 +85,19 @@
       display: block;
       margin-top: 15px;
       margin-bottom: 4px;
-      color: var(--amarelo);
-      font-weight: 600;
-      font-size: 1.04em;
+      color: var(--vinho);
+      font-weight: 700;
+      font-size: 1.08em;
       letter-spacing: 0.5px;
-      text-shadow: 0 1px 2px var(--vinho-escuro);
+      text-shadow: 0 1px 2px #fff4;
     }
     input, select {
       width: 100%;
-      padding: 12px 14px;
+      padding: 13px 15px;
       margin-top: 2px;
-      border: 2px solid var(--vinho);
+      border: 2.5px solid var(--vinho);
       border-radius: 8px;
-      font-size: 1em;
+      font-size: 1.08em;
       background: var(--cinza-form);
       color: var(--branco);
       box-sizing: border-box;
@@ -107,6 +109,7 @@
     input:focus, select:focus {
       border: 2.5px solid var(--amarelo);
       box-shadow: 0 0 8px #ffd70077;
+      background: #2c2228;
     }
     .whatsapp-btn {
       display: block;
@@ -115,9 +118,9 @@
       background: var(--botao);
       color: var(--branco);
       border: none;
-      padding: 16px;
+      padding: 18px;
       border-radius: 10px;
-      font-size: 1.18em;
+      font-size: 1.22em;
       font-weight: bold;
       text-align: center;
       cursor: pointer;
@@ -141,22 +144,24 @@
     }
     .servicos li {
       margin: 3px 0;
-      font-size: 1.05em;
+      font-size: 1.07em;
       letter-spacing: 0.5px;
+      text-shadow: 0 1px 2px #0008;
     }
     .destaque {
       display: inline-block;
       background: linear-gradient(90deg, var(--amarelo) 80%, #fffbe0 100%);
       color: var(--vinho-escuro);
       font-weight: bold;
-      padding: 7px 20px;
-      border-radius: 7px;
-      margin-top: 17px;
-      font-size: 1.07em;
+      padding: 9px 22px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 1.12em;
       letter-spacing: 1.2px;
       box-shadow: 0 2px 10px #ffd70033;
       text-align: center;
       text-shadow: 0 1px 2px #fff6;
+      border: 2px solid var(--vinho);
     }
     @media (max-width: 600px) {
       .container {
