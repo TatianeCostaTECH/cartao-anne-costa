@@ -8,19 +8,20 @@
     :root {
       --vinho: #8d1844;
       --vinho-escuro: #5a0d2c;
-      --amarelo: #ffd700;
-      --dourado: #ffe066;
-      --preto: #18141a;
-      --cinza-form: #232126;
+      --dourado: #ffd700;
+      --dourado-escuro: #bfa400;
       --branco: #fff;
+      --cinza-form: #2b2327;
+      --preto: #18141a;
       --botao: #8d1844;
-      --botao-hover: #c21f5b;
+      --botao-hover: #b71c50;
+      --borda-card: #ffd700;
     }
     body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, #18141a 65%, #8d1844 100%);
+      background: linear-gradient(135deg, #ffd70010 0%, #8d1844 100%);
       font-family: 'Segoe UI', Arial, sans-serif;
       color: var(--branco);
       display: flex;
@@ -29,28 +30,32 @@
       justify-content: center;
     }
     .container {
-      background: linear-gradient(135deg, #8d1844 0%, #5a0d2c 100%);
-      border-radius: 28px;
-      box-shadow: 0 12px 36px rgba(0,0,0,0.7);
-      border: 3.5px solid var(--amarelo);
-      max-width: 410px;
-      width: 100%;
+      background: linear-gradient(135deg, #8d1844 80%, #5a0d2c 100%);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+      max-width: 420px;
+      width: 96vw;
       margin: 36px 8px;
-      padding: 38px 28px 28px 28px;
+      padding: 36px 24px 28px 24px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
+      border: 3.5px solid var(--borda-card);
       position: relative;
+      transition: box-shadow 0.3s;
+    }
+    .container:hover {
+      box-shadow: 0 16px 48px 0 rgba(141,24,68,0.22), 0 0 0 6px #ffd70044;
     }
     .titulo {
-      color: var(--amarelo);
-      font-size: 2.5em;
+      color: var(--dourado);
+      font-size: 2.3em;
       font-weight: 900;
       letter-spacing: 2.5px;
       margin-bottom: 2px;
       text-align: center;
-      text-shadow: 0 2px 12px #8d1844, 0 0 8px #fff8;
+      text-shadow: 0 2px 16px #8d1844, 0 0 12px #fff8;
     }
     .subtitulo {
       color: var(--branco);
@@ -62,7 +67,7 @@
       text-shadow: 0 1px 3px #000a;
     }
     .telefone {
-      color: var(--amarelo);
+      color: var(--dourado);
       font-size: 1.13em;
       font-weight: bold;
       margin-bottom: 22px;
@@ -91,28 +96,28 @@
       width: 100%;
       padding: 13px 15px;
       margin-top: 2px;
-      border: 2.5px solid var(--amarelo);
+      border: 2px solid var(--dourado);
       border-radius: 8px;
       font-size: 1.08em;
       background: var(--cinza-form);
       color: var(--branco);
       box-sizing: border-box;
       outline: none;
-      transition: border 0.2s, box-shadow 0.2s;
+      transition: border 0.2s, box-shadow 0.2s, background 0.2s;
       font-weight: 500;
       margin-bottom: 2px;
     }
     input:focus, select:focus {
-      border: 2.5px solid var(--dourado);
+      border: 2.5px solid var(--dourado-escuro);
       box-shadow: 0 0 8px #ffd70077;
-      background: #2c2228;
+      background: #3e2a36;
     }
     .whatsapp-btn {
       display: block;
       width: 100%;
       margin: 28px 0 14px 0;
       background: var(--botao);
-      color: var(--branco);
+      color: var(--dourado);
       border: none;
       padding: 18px;
       border-radius: 10px;
@@ -120,13 +125,13 @@
       font-weight: bold;
       text-align: center;
       cursor: pointer;
-      transition: background 0.2s, box-shadow 0.2s;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
       box-shadow: 0 2px 8px #0004;
       letter-spacing: 1.2px;
       text-shadow: 0 1px 2px #0007;
     }
     .whatsapp-btn:hover {
-      background: var(--amarelo);
+      background: var(--dourado);
       color: var(--vinho-escuro);
       box-shadow: 0 4px 18px #ffd70033;
     }
@@ -134,7 +139,7 @@
       margin-top: 18px;
       padding: 0;
       list-style: none;
-      color: var(--branco);
+      color: var(--dourado);
       font-size: 1em;
       line-height: 1.7;
       text-align: center;
@@ -147,7 +152,7 @@
     }
     .destaque {
       display: inline-block;
-      background: var(--amarelo);
+      background: var(--dourado);
       color: var(--vinho-escuro);
       font-weight: bold;
       padding: 9px 22px;
