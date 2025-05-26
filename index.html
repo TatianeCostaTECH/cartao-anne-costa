@@ -6,20 +6,22 @@
   <title>Anne Costa - Motorista Particular</title>
   <style>
     :root {
-      --preto: #18141a;
-      --vinho: #4d223a;
-      --vinho-titulo: #6c2944;
-      --cinza-card: #eaeaea;
-      --cinza-txt: #232126;
-      --amarelo: #ffe082;
-      --amarelo-forte: #ffd700;
+      --rosa-choque: #ff007f;
+      --rosa-escuro: #c4005a;
+      --dourado: #ffd700;
       --branco: #fff;
+      --cinza-card: #f9f9f9;
+      --cinza-form: #f3f3f3;
+      --cinza-txt: #232126;
+      --botao: #ff007f;
+      --botao-hover: #c4005a;
+      --borda-card: #ffd700;
     }
     body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, var(--preto) 70%, var(--vinho) 100%);
+      background: linear-gradient(135deg, #fff 60%, #ffe6f2 100%);
       font-family: 'Segoe UI', Arial, sans-serif;
       color: var(--cinza-txt);
       display: flex;
@@ -27,75 +29,75 @@
       align-items: center;
       justify-content: center;
     }
-    .cartao {
+    .container {
       background: var(--cinza-card);
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(44, 34, 50, 0.22);
+      border-radius: 22px;
+      box-shadow: 0 8px 32px rgba(255,0,127,0.08), 0 0 0 4px var(--rosa-choque);
       max-width: 410px;
       width: 96vw;
-      margin: 36px 8px 0 8px;
-      padding: 32px 22px 24px 22px;
+      margin: 36px 8px;
+      padding: 36px 24px 28px 24px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      border-left: 10px solid var(--vinho);
-      border-top: 2px solid var(--vinho);
-      border-bottom: 2px solid var(--vinho);
-      border-right: 2px solid var(--vinho);
+      align-items: center;
+      border: 2.5px solid var(--rosa-choque);
       position: relative;
+      transition: box-shadow 0.3s;
     }
-    .cartao .titulo {
-      color: var(--vinho-titulo);
-      font-size: 2em;
+    .container:hover {
+      box-shadow: 0 16px 48px 0 rgba(255,0,127,0.13), 0 0 0 7px #ffd70033;
+    }
+    .titulo {
+      color: var(--rosa-choque);
+      font-size: 2.2em;
       font-weight: 900;
-      letter-spacing: 1.5px;
-      margin-bottom: 4px;
-      text-align: left;
+      letter-spacing: 2.5px;
+      margin-bottom: 2px;
+      text-align: center;
+      text-shadow: 0 2px 12px #ffd70033, 0 0 8px #fff5;
     }
-    .cartao .subtitulo {
-      color: var(--cinza-txt);
-      font-size: 1.1em;
-      font-weight: 600;
-      margin-bottom: 18px;
-      letter-spacing: 1px;
-      text-align: left;
-      border-bottom: 2px solid var(--vinho);
-      display: inline-block;
-      padding-bottom: 2px;
+    .subtitulo {
+      color: var(--rosa-escuro);
+      font-size: 1.15em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-align: center;
+      letter-spacing: 1.2px;
     }
-    .cartao .telefone {
-      color: var(--vinho-titulo);
-      background: var(--amarelo);
-      font-size: 1.1em;
+    .telefone {
+      color: var(--dourado);
+      font-size: 1.13em;
       font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      display: inline-block;
-      box-shadow: 0 2px 8px #0001;
-      letter-spacing: 1px;
+      margin-bottom: 22px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-shadow: 0 1px 2px #fff8;
     }
     form {
       width: 100%;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
     label {
       display: block;
       margin-top: 15px;
       margin-bottom: 4px;
-      color: var(--vinho-titulo);
+      color: var(--rosa-escuro);
       font-weight: 700;
       font-size: 1.08em;
       letter-spacing: 0.5px;
     }
     input, select {
       width: 100%;
-      padding: 12px 13px;
-      border: 1.5px solid var(--vinho);
-      border-radius: 7px;
-      font-size: 1em;
-      background: var(--branco);
+      padding: 13px 15px;
+      margin-top: 2px;
+      border: 2px solid var(--rosa-choque);
+      border-radius: 8px;
+      font-size: 1.08em;
+      background: var(--cinza-form);
       color: var(--cinza-txt);
       box-sizing: border-box;
       outline: none;
@@ -104,7 +106,7 @@
       margin-bottom: 2px;
     }
     input:focus, select:focus {
-      border: 2.5px solid var(--amarelo-forte);
+      border: 2.5px solid var(--dourado);
       box-shadow: 0 0 8px #ffd70055;
       background: #fffde9;
     }
@@ -112,32 +114,33 @@
       display: block;
       width: 100%;
       margin: 28px 0 14px 0;
-      background: var(--vinho-titulo);
+      background: var(--botao);
       color: var(--branco);
       border: none;
-      padding: 15px;
-      border-radius: 9px;
-      font-size: 1.16em;
+      padding: 18px;
+      border-radius: 10px;
+      font-size: 1.22em;
       font-weight: bold;
       text-align: center;
       cursor: pointer;
       transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 8px #4d223a33;
-      letter-spacing: 1.1px;
+      box-shadow: 0 2px 8px #ff007f33;
+      letter-spacing: 1.2px;
+      text-shadow: 0 1px 2px #0007;
     }
     .whatsapp-btn:hover {
-      background: var(--amarelo-forte);
-      color: var(--vinho-titulo);
+      background: var(--dourado);
+      color: var(--rosa-choque);
       box-shadow: 0 4px 18px #ffd70033;
     }
     .servicos {
       margin-top: 18px;
       padding: 0;
       list-style: none;
-      color: var(--vinho-titulo);
+      color: var(--rosa-escuro);
       font-size: 1em;
       line-height: 1.7;
-      text-align: left;
+      text-align: center;
     }
     .servicos li {
       margin: 3px 0;
@@ -146,27 +149,27 @@
     }
     .destaque {
       display: inline-block;
-      background: var(--amarelo);
-      color: var(--cinza-txt);
+      background: var(--dourado);
+      color: var(--rosa-escuro);
       font-weight: bold;
-      padding: 7px 18px;
-      border-radius: 6px;
-      margin-top: 18px;
-      font-size: 1.05em;
+      padding: 9px 22px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 1.12em;
       letter-spacing: 1.2px;
-      box-shadow: 0 2px 8px #ffd70033;
-      text-align: left;
-      border: 1.5px solid var(--vinho);
+      box-shadow: 0 2px 10px #ffd70033;
+      text-align: center;
+      border: 2px solid var(--rosa-choque);
     }
     @media (max-width: 600px) {
-      .cartao {
+      .container {
         max-width: 99vw;
-        margin: 10px 2vw 0 2vw;
+        margin: 10px 2vw;
         padding: 18px 4vw 12px 4vw;
-        border-radius: 10px;
+        border-radius: 14px;
       }
       .titulo {
-        font-size: 1.25em;
+        font-size: 1.3em;
       }
       .whatsapp-btn {
         font-size: 1em;
@@ -179,10 +182,12 @@
   </style>
 </head>
 <body>
-  <div class="cartao">
+  <div class="container">
     <div class="titulo">ANNE COSTA</div>
     <div class="subtitulo">MOTORISTA PARTICULAR</div>
-    <div class="telefone">📞 (85) 98547-9321</div>
+    <div class="telefone">
+      <span>📞</span> <span>(85) 98547-9321</span>
+    </div>
     <form id="agendarForm" onsubmit="enviarWhatsApp(); return false;">
       <label for="nome">Nome</label>
       <input type="text" id="nome" required>
@@ -211,17 +216,23 @@
     <div class="destaque">SERVIÇO 24 HORAS</div>
   </div>
   <script>
+    // Define a data mínima como hoje
     document.getElementById('data').min = new Date().toISOString().split('T')[0];
+
     function enviarWhatsApp() {
       const nome = document.getElementById('nome').value;
       const data = document.getElementById('data').value;
       const hora = document.getElementById('hora').value;
       const localInicio = document.getElementById('localInicio').value;
       const localFinal = document.getElementById('localFinal').value;
+
+      // Formata data para pt-BR
       const dataFormatada = new Date(data + 'T00:00:00').toLocaleDateString('pt-BR');
+
       const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar uma corrida para ${dataFormatada} às ${hora}.
 Local de início (onde pego): ${localInicio}
 Local final (onde deixo): ${localFinal}`;
+
       const numero = '5585985479321';
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
       window.open(url, '_blank');
