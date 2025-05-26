@@ -6,185 +6,169 @@
   <title>Anne Costa - Motorista Particular</title>
   <style>
     :root {
-      --rosa-choque: #ff007f;
-      --rosa-escuro: #c4005a;
-      --dourado: #ffd700;
-      --branco: #fff;
-      --preto: #000;
-      --cinza-card: #18181a;
-      --cinza-form: #23232b;
-      --botao: #ff007f;
-      --botao-hover: #c4005a;
-      --borda-card: #ffd700;
+      --cor-fundo: #f4f1ee;
+      --cor-cartao: #ffffff;
+      --cor-titulo: #3e2f5b;
+      --cor-subtitulo: #6b5b95;
+      --cor-texto: #4a4a4a;
+      --cor-destaque: #d4af37; /* dourado elegante */
+      --cor-botao: #6b5b95;
+      --cor-botao-hover: #3e2f5b;
+      --cor-borda: #d4af37;
+      --cor-input-fundo: #f9f7f3;
+      --cor-input-borda: #c1b7a1;
     }
     body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      background: var(--preto);
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: var(--branco);
+      background: var(--cor-fundo);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--cor-texto);
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
     .container {
-      background: var(--cinza-card);
-      border-radius: 24px;
-      box-shadow: 0 8px 32px rgba(255,0,127,0.08);
+      background: var(--cor-cartao);
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
       max-width: 420px;
-      width: 96vw;
-      margin: 36px 8px;
-      padding: 36px 24px 28px 24px;
+      width: 100%;
+      padding: 32px 28px 28px 28px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
-      border: 3.5px solid var(--borda-card);
-      position: relative;
-      transition: box-shadow 0.3s;
+      border: 3px solid var(--cor-borda);
+      transition: box-shadow 0.3s ease;
     }
     .container:hover {
-      box-shadow: 0 16px 48px 0 rgba(255,0,127,0.13), 0 0 0 7px #ffd70033;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.25);
     }
     .titulo {
-      color: var(--rosa-choque);
-      font-size: 2.2em;
+      color: var(--cor-titulo);
+      font-size: 2.5em;
       font-weight: 900;
-      letter-spacing: 2.5px;
-      margin-bottom: 2px;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
       text-align: center;
-      /* Contorno branco para máxima legibilidade */
-      text-shadow:
-        2px 2px 0 #fff,
-        -2px 2px 0 #fff,
-        -2px -2px 0 #fff,
-        2px -2px 0 #fff,
-        0 0 0 #fff;
-      /* Para navegadores Webkit, pode usar também: */
-      /* -webkit-text-stroke: 2px #fff; */
+      font-family: 'Georgia', serif;
     }
     .subtitulo {
-      color: var(--rosa-escuro);
-      font-size: 1.15em;
-      font-weight: 700;
-      margin-bottom: 10px;
+      color: var(--cor-subtitulo);
+      font-size: 1.2em;
+      font-weight: 600;
+      margin-bottom: 20px;
       text-align: center;
+      font-style: italic;
       letter-spacing: 1.2px;
     }
     .telefone {
-      color: var(--dourado);
-      font-size: 1.13em;
-      font-weight: bold;
-      margin-bottom: 22px;
+      color: var(--cor-destaque);
+      font-size: 1.2em;
+      font-weight: 700;
+      margin-bottom: 24px;
       text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      text-shadow: 0 1px 2px #0008;
+      letter-spacing: 1.5px;
+      font-family: 'Arial Black', Arial, sans-serif;
     }
     form {
       width: 100%;
-      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
     }
     label {
-      display: block;
-      margin-top: 15px;
-      margin-bottom: 4px;
-      color: var(--rosa-choque);
-      font-weight: 700;
-      font-size: 1.08em;
-      letter-spacing: 0.5px;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: var(--cor-titulo);
+      font-size: 1.05em;
+      letter-spacing: 0.8px;
     }
-    input, select {
-      width: 100%;
-      padding: 13px 15px;
-      margin-top: 2px;
-      border: 2px solid var(--rosa-choque);
-      border-radius: 8px;
-      font-size: 1.08em;
-      background: var(--cinza-form);
-      color: var(--branco);
-      box-sizing: border-box;
+    input {
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 2px solid var(--cor-borda);
+      background: var(--cor-input-fundo);
+      font-size: 1em;
+      color: var(--cor-texto);
       outline: none;
-      transition: border 0.2s, box-shadow 0.2s, background 0.2s;
-      font-weight: 500;
-      margin-bottom: 2px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    input:focus, select:focus {
-      border: 2.5px solid var(--dourado);
-      box-shadow: 0 0 8px #ffd70055;
-      background: #23232b;
+    input:focus {
+      border-color: var(--cor-destaque);
+      box-shadow: 0 0 8px var(--cor-destaque);
     }
     .whatsapp-btn {
-      display: block;
-      width: 100%;
-      margin: 28px 0 14px 0;
-      background: var(--botao);
-      color: var(--branco);
+      margin-top: 28px;
+      padding: 16px 0;
+      background: var(--cor-botao);
+      color: var(--cor-destaque);
+      font-size: 1.2em;
+      font-weight: 700;
       border: none;
-      padding: 18px;
-      border-radius: 10px;
-      font-size: 1.22em;
-      font-weight: bold;
-      text-align: center;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 8px #ff007f33;
-      letter-spacing: 1.2px;
-      text-shadow: 0 1px 2px #0007;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      letter-spacing: 1.5px;
     }
     .whatsapp-btn:hover {
-      background: var(--dourado);
-      color: var(--rosa-escuro);
-      box-shadow: 0 4px 18px #ffd70033;
+      background: var(--cor-botao-hover);
+      color: var(--cor-destaque);
     }
     .servicos {
-      margin-top: 18px;
-      padding: 0;
+      margin-top: 28px;
       list-style: none;
-      color: var(--dourado);
-      font-size: 1em;
-      line-height: 1.7;
-      text-align: center;
+      padding: 0;
+      width: 100%;
+      color: var(--cor-titulo);
+      font-weight: 600;
+      font-size: 1.05em;
+      letter-spacing: 1px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
     }
     .servicos li {
-      margin: 3px 0;
-      font-size: 1.07em;
-      letter-spacing: 0.5px;
+      flex: 1 1 45%;
+      background: var(--cor-input-fundo);
+      padding: 10px 14px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      color: var(--cor-texto);
     }
     .destaque {
-      display: inline-block;
-      background: var(--dourado);
-      color: var(--rosa-escuro);
-      font-weight: bold;
-      padding: 9px 22px;
-      border-radius: 8px;
-      margin-top: 20px;
-      font-size: 1.12em;
-      letter-spacing: 1.2px;
-      box-shadow: 0 2px 10px #ffd70033;
+      margin-top: 30px;
+      background: var(--cor-destaque);
+      color: var(--cor-titulo);
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 20px;
+      font-size: 1.1em;
+      letter-spacing: 1.5px;
+      box-shadow: 0 4px 12px rgba(212,175,55,0.5);
       text-align: center;
-      border: 2px solid var(--rosa-choque);
+      width: fit-content;
+      align-self: center;
+      font-family: 'Arial Black', Arial, sans-serif;
     }
     @media (max-width: 600px) {
       .container {
-        max-width: 99vw;
-        margin: 10px 2vw;
-        padding: 18px 4vw 12px 4vw;
-        border-radius: 14px;
+        max-width: 95vw;
+        padding: 24px 20px 20px 20px;
       }
-      .titulo {
-        font-size: 1.3em;
+      .servicos {
+        flex-direction: column;
+        gap: 12px;
       }
-      .whatsapp-btn {
-        font-size: 1em;
-        padding: 11px;
-      }
-      .destaque {
-        font-size: 0.97em;
+      .servicos li {
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -192,10 +176,8 @@
 <body>
   <div class="container">
     <div class="titulo">ANNE COSTA</div>
-    <div class="subtitulo">MOTORISTA PARTICULAR</div>
-    <div class="telefone">
-      <span>📞</span> <span>(85) 98547-9321</span>
-    </div>
+    <div class="subtitulo">Motorista Particular</div>
+    <div class="telefone">📞 (85) 98547-9321</div>
     <form id="agendarForm" onsubmit="enviarWhatsApp(); return false;">
       <label for="nome">Nome</label>
       <input type="text" id="nome" required>
