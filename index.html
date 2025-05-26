@@ -8,11 +8,11 @@
     :root {
       --vinho: #8d1844;
       --vinho-escuro: #5a0d2c;
-      --vinho-gradiente: linear-gradient(135deg, #8d1844 0%, #5a0d2c 100%);
       --amarelo: #ffd700;
-      --cinza-escuro: #232126;
+      --dourado: #ffe066;
+      --preto: #18141a;
+      --cinza-form: #232126;
       --branco: #fff;
-      --cinza-form: #18171b;
       --botao: #8d1844;
       --botao-hover: #c21f5b;
     }
@@ -20,8 +20,8 @@
       margin: 0;
       padding: 0;
       min-height: 100vh;
+      background: linear-gradient(135deg, #18141a 65%, #8d1844 100%);
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: radial-gradient(circle at 80% 80%, #8d184410 0%, #232126 100%), #18141a;
       color: var(--branco);
       display: flex;
       flex-direction: column;
@@ -29,9 +29,10 @@
       justify-content: center;
     }
     .container {
-      background: var(--cinza-escuro);
+      background: linear-gradient(135deg, #8d1844 0%, #5a0d2c 100%);
       border-radius: 28px;
-      box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.7);
+      border: 3.5px solid var(--amarelo);
       max-width: 410px;
       width: 100%;
       margin: 36px 8px;
@@ -40,21 +41,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      border: 4px solid var(--vinho);
       position: relative;
     }
     .titulo {
-      color: var(--vinho);
-      font-size: 2.3em;
+      color: var(--amarelo);
+      font-size: 2.5em;
       font-weight: 900;
       letter-spacing: 2.5px;
       margin-bottom: 2px;
       text-align: center;
-      text-shadow: 0 2px 12px #000a, 0 0 6px var(--amarelo);
-      background: var(--vinho-gradiente);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      text-shadow: 0 2px 12px #8d1844, 0 0 8px #fff8;
     }
     .subtitulo {
       color: var(--branco);
@@ -63,7 +59,7 @@
       margin-bottom: 10px;
       text-align: center;
       letter-spacing: 1.2px;
-      text-shadow: 0 1px 3px var(--vinho-escuro);
+      text-shadow: 0 1px 3px #000a;
     }
     .telefone {
       color: var(--amarelo);
@@ -85,17 +81,17 @@
       display: block;
       margin-top: 15px;
       margin-bottom: 4px;
-      color: var(--vinho);
+      color: var(--dourado);
       font-weight: 700;
       font-size: 1.08em;
       letter-spacing: 0.5px;
-      text-shadow: 0 1px 2px #fff4;
+      text-shadow: 0 1px 2px #8d1844;
     }
     input, select {
       width: 100%;
       padding: 13px 15px;
       margin-top: 2px;
-      border: 2.5px solid var(--vinho);
+      border: 2.5px solid var(--amarelo);
       border-radius: 8px;
       font-size: 1.08em;
       background: var(--cinza-form);
@@ -107,7 +103,7 @@
       margin-bottom: 2px;
     }
     input:focus, select:focus {
-      border: 2.5px solid var(--amarelo);
+      border: 2.5px solid var(--dourado);
       box-shadow: 0 0 8px #ffd70077;
       background: #2c2228;
     }
@@ -130,7 +126,8 @@
       text-shadow: 0 1px 2px #0007;
     }
     .whatsapp-btn:hover {
-      background: var(--botao-hover);
+      background: var(--amarelo);
+      color: var(--vinho-escuro);
       box-shadow: 0 4px 18px #ffd70033;
     }
     .servicos {
@@ -141,16 +138,16 @@
       font-size: 1em;
       line-height: 1.7;
       text-align: center;
+      text-shadow: 0 1px 2px #0008;
     }
     .servicos li {
       margin: 3px 0;
       font-size: 1.07em;
       letter-spacing: 0.5px;
-      text-shadow: 0 1px 2px #0008;
     }
     .destaque {
       display: inline-block;
-      background: linear-gradient(90deg, var(--amarelo) 80%, #fffbe0 100%);
+      background: var(--amarelo);
       color: var(--vinho-escuro);
       font-weight: bold;
       padding: 9px 22px;
